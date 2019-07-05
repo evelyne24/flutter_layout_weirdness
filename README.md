@@ -2,19 +2,13 @@
 
 Try to get this layout to work. Come on, I challenge you!
 
-## Getting Started
+# Description
 
-This project is a starting point for a Flutter application.
+This is a fairly straightforward layout but very hard to nail down in Flutter. It shouldn't be this hard.
 
-A few resources to get you started if this is your first Flutter project:
+Basically, it's a footer that stays at the bottom of the screen, no matter if the content is enough to fill the view port or not. If the content is overflowing, the layout is scrollable. Kind of like `fill_viewport` in Android `ScrollView`. 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
-
+Also, I want to be able to have children that expand and center on the screen if there is empty space, while the footer stays put at the bottom.
 
 ![Screenshot1](Screenshot1.png)
 ![Screenshot1](Screenshot2.png)
