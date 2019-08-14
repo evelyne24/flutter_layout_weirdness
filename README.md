@@ -8,7 +8,7 @@ Try to get this layout to work 🤯
 
 This is a fairly straightforward layout but very hard to nail down in Flutter. It shouldn't be this hard.
 
-The point is to have a reusable widget that contains a footer and some children. The footer should stay at the bottom of the screen, no matter if the content is enough to fill the view port or not. If the content is overflowing, the layout should scroll. Kind of like `fill_viewport` in Android `ScrollView`. 
+The point is to have a reusable widget that contains a footer and some children. The footer should stay at the bottom of the screen, no matter if the content is enough to fill the view port or not. Kind of like `fill_viewport` in Android `ScrollView`. If the content is overflowing, the layout should scroll and the footer should scroll with the layout. 
 
 I want to be able to have a child that expands and centers on the screen if there is empty space, while the footer stays put at the bottom.
 
