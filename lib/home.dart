@@ -22,9 +22,20 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(color: Colors.black),
             ),
             SizedBox(height: 16.0),
-            Align(
-                alignment: Alignment.center,
-                child: Image.network('http://placekitten.com/g/200/300')),
+            Expanded(
+              child: Align(
+                  alignment: Alignment.center,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Image.network('http://placekitten.com/g/200/300'),
+                      LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+                        return Icon(Icons.access_alarm);
+                      },),
+                    ],
+                  ),
+              ),
+            ),
           ],
           footer: RaisedButton(
             color: Colors.blue,

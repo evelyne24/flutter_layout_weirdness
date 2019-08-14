@@ -28,7 +28,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ListTile(
               title: Text(
                   '${setting[0].toUpperCase()}${setting.substring(1)} settings'),
-              subtitle: Text('Set your ${setting} preferences'),
+              subtitle: Text('Set your $setting preferences'),
               trailing: Icon(settings[setting]),
               onTap: () {},
             )

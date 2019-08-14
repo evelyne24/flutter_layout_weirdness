@@ -23,22 +23,28 @@ class ScrollableFooterLayout extends StatelessWidget {
         final mediaQuery = MediaQuery.of(context);
         return SingleChildScrollView(
           padding: padding + EdgeInsets.only(bottom: mediaQuery.padding.bottom),
-          child: MinHeightOrUnbounded(
-            minHeight: constraints.maxHeight -
-                padding.vertical -
-                mediaQuery.padding.bottom,
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: children,
-                ),
-                footer,
-              ],
+          child: ConstrainedBox(
+            constraints: constraints.copyWith(
+              minHeight: constraints.maxHeight -
+                  padding.vertical -
+                  mediaQuery.padding.bottom,
+              maxHeight: double.infinity,
+            ),
+            child: IntrinsicHeight(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: children,
+                    ),
+                  ),
+                  footer,
+                ],
+              ),
             ),
           ),
         );
